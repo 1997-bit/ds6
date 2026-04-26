@@ -1,0 +1,34 @@
+# Cache local de Gradle (se regenera solo)
+.gradle/
+build/
+*/build/
+
+# Workspace personal, no es parte del proyecto
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/assetWizardSettings.xml
+.idea/caches/
+.idea/deploymentTargetSelector.xml
+.idea/render.experimental.xml
+# Sí se sube: .idea/gradle.xml, compiler.xml, misc.xml
+
+# Ruta del SDK — única por máquina
+local.properties
+
+# Binarios generados
+*.apk
+*.aab
+*.class
+*.jar
+captures/
+*.hprof
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Solo si los tienes
+*.jks
+*.keystore
+google-services.json
+secrets.properties

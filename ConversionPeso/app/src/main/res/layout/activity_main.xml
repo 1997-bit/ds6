@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contenedor"
+        android:layout_width="409dp"
+        android:layout_height="734dp"
+        android:background="#EEEEEE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/editTextNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            tools:ignore="LabelFor,MissingConstraints"
+            tools:layout_editor_absoluteX="104dp"
+            tools:layout_editor_absoluteY="213dp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Conversión de Peso"
+            android:textSize="24sp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="104dp"
+            tools:layout_editor_absoluteY="163dp" />
+
+        <TextView
+            android:id="@+id/tvConvertirDe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Convertir De:"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="169dp"
+            tools:layout_editor_absoluteY="272dp" />
+
+        <TextView
+            android:id="@+id/tvConvertirA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Convertir A:"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="172dp"
+            tools:layout_editor_absoluteY="341dp" />
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="193dp"
+            android:layout_height="19dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="113dp"
+            tools:layout_editor_absoluteY="375dp" />
+
+        <Button
+            android:id="@+id/butonConvertir"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="440dp"
+            android:text="Convertir"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="193dp"
+            android:layout_height="19dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="113dp"
+            tools:layout_editor_absoluteY="299dp" />
+
+        <TextView
+            android:id="@+id/tvNombres"
+            android:layout_width="207dp"
+            android:layout_height="36dp"
+            android:text="Gloria Moreno | Jonathan Gómez
+                        Juan García | Miguel Caballero"
+            tools:layout_editor_absoluteX="107dp"
+            tools:layout_editor_absoluteY="644dp" />
+
+        <TextView
+            android:id="@+id/tvResultado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            tools:layout_editor_absoluteX="177dp"
+            tools:layout_editor_absoluteY="536dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
