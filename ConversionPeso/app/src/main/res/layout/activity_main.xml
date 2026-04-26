@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/main"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,94 +9,135 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contenedor"
-        android:layout_width="409dp"
-        android:layout_height="734dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="#EEEEEE"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/editTextNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number"
-            tools:ignore="LabelFor,MissingConstraints"
-            tools:layout_editor_absoluteX="104dp"
-            tools:layout_editor_absoluteY="213dp" />
-
+        <!-- Título -->
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Conversión de Peso"
             android:textSize="24sp"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="104dp"
-            tools:layout_editor_absoluteY="163dp" />
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="48dp" />
+
+        <!-- Campo de entrada -->
+        <EditText
+            android:id="@+id/editTextNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:hint="Ingresa el valor"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView3" />
+
+        <!-- Label "Convertir De" -->
+
+        <!-- Spinner "Convertir De" -->
 
         <TextView
             android:id="@+id/tvConvertirDe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="176dp"
+            android:layout_marginTop="16dp"
             android:text="Convertir De:"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="169dp"
-            tools:layout_editor_absoluteY="272dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextNumber" />
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvConvertirDe" />
+
 
         <TextView
             android:id="@+id/tvConvertirA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="168dp"
+            android:layout_marginTop="24dp"
             android:text="Convertir A:"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="172dp"
-            tools:layout_editor_absoluteY="341dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spinner1" />
 
         <Spinner
             android:id="@+id/spinner2"
-            android:layout_width="193dp"
-            android:layout_height="19dp"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="113dp"
-            tools:layout_editor_absoluteY="375dp" />
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvConvertirA" />
 
+        <!-- Botón Convertir -->
         <Button
             android:id="@+id/butonConvertir"
             style="@style/Widget.AppCompat.Button.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="440dp"
             android:text="Convertir"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Spinner
-            android:id="@+id/spinner1"
-            android:layout_width="193dp"
-            android:layout_height="19dp"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="113dp"
-            tools:layout_editor_absoluteY="299dp" />
-
-        <TextView
-            android:id="@+id/tvNombres"
-            android:layout_width="207dp"
-            android:layout_height="36dp"
-            android:text="Gloria Moreno | Jonathan Gómez
-                        Juan García | Miguel Caballero"
-            tools:layout_editor_absoluteX="107dp"
-            tools:layout_editor_absoluteY="644dp" />
+            app:layout_constraintTop_toBottomOf="@id/spinner2" />
 
         <TextView
             android:id="@+id/tvResultado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:layout_editor_absoluteX="177dp"
-            tools:layout_editor_absoluteY="536dp" />
+            android:text=""
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/butonConvertir" />
+
+        <TextView
+            android:id="@+id/tvNombres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gloria Moreno | Jonathan Gómez&#10;Juan García | Miguel Caballero"
+            android:textSize="12sp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="24dp" />
+
+        <androidx.constraintlayout.widget.Barrier android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.constraintlayout.widget.Barrier android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.constraintlayout.widget.Barrier android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
