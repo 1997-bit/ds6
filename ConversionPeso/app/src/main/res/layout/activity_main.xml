@@ -1,144 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/main"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FAFAFA">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/contenedor"
+    <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#EEEEEE"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fillViewport="true">
 
-        <!-- Título -->
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Conversión de Peso"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="48dp" />
+            android:orientation="vertical"
+            android:padding="32dp"
+            android:paddingTop="48dp"
+            android:paddingBottom="32dp">
 
-        <!-- Campo de entrada -->
-        <EditText
-            android:id="@+id/editTextNumber"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="numberDecimal"
-            android:hint="Ingresa el valor"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="24dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView3" />
+            <!-- Título -->
+            <TextView
+                android:id="@+id/Titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ConversionPeso"
+                android:textSize="26sp"
+                android:textStyle="normal"
+                android:textColor="#333333"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
 
-        <!-- Label "Convertir De" -->
+            <!-- Input -->
+            <TextView
+                android:id="@+id/LblValor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Valor"
+                android:textSize="13sp"
+                android:textColor="#666666"
+                android:layout_marginBottom="8dp" />
 
-        <!-- Spinner "Convertir De" -->
+            <EditText
+                android:id="@+id/input"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="0.00"
+                android:inputType="numberDecimal"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:layout_marginBottom="28dp" />
 
-        <TextView
-            android:id="@+id/tvConvertirDe"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="176dp"
-            android:layout_marginTop="16dp"
-            android:text="Convertir De:"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editTextNumber" />
+            <!-- Unidad origen -->
 
-        <Spinner
-            android:id="@+id/spinner1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvConvertirDe" />
+            <TextView
+                android:id="@+id/lblConvertirDe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Convertir de"
+                android:textColor="#666666"
+                android:textSize="13sp" />
 
+            <Spinner
+                android:id="@+id/spinnerDe"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="24dp" />
 
-        <TextView
-            android:id="@+id/tvConvertirA"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="168dp"
-            android:layout_marginTop="24dp"
-            android:text="Convertir A:"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/spinner1" />
+            <!-- Unidad destino -->
+            <TextView
+                android:id="@+id/lblConvertirA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Convertir a"
+                android:textSize="13sp"
+                android:textColor="#666666"
+                android:layout_marginBottom="8dp" />
 
-        <Spinner
-            android:id="@+id/spinner2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvConvertirA" />
+            <Spinner
+                android:id="@+id/spinner2"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="36dp" />
 
-        <!-- Botón Convertir -->
-        <Button
-            android:id="@+id/butonConvertir"
-            style="@style/Widget.AppCompat.Button.Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Convertir"
-            android:layout_marginTop="32dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/spinner2" />
+            <!-- Botón -->
+            <Button
+                android:id="@+id/btnConvertir"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="36dp"
+                android:background="#3A3A3A"
+                android:text="Convertir"
+                android:textAllCaps="false"
+                android:textSize="15sp" />
 
-        <TextView
-            android:id="@+id/tvResultado"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginTop="32dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/butonConvertir" />
+            <!-- Resultado -->
 
-        <TextView
-            android:id="@+id/tvNombres"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gloria Moreno | Jonathan Gómez&#10;Juan García | Miguel Caballero"
-            android:textSize="12sp"
-            android:gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginBottom="24dp" />
+            <TextView
+                android:id="@+id/lblResultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Resultado"
+                android:textColor="#999999"
+                android:textSize="12sp" />
 
-        <androidx.constraintlayout.widget.Barrier android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="—"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:textColor="#222222"
+                android:layout_marginBottom="48dp" />
 
-        <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <!-- Footer -->
+            <TextView
+                android:id="@+id/footer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Gloria Moreno · Jonathan Gómez · Juan García · Miguel Caballero"
+                android:textColor="#BBBBBB"
+                android:textSize="11sp" />
 
-        <androidx.constraintlayout.widget.Barrier android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <androidx.constraintlayout.widget.Barrier android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
